@@ -4,7 +4,6 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
-        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -24,10 +23,10 @@
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="NlC-hU-4Up">
-                                                <rect key="frame" x="0.0" y="0.0" width="414" height="435"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="710.5"/>
                                             </imageView>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NgI-rF-er6">
-                                                <rect key="frame" x="0.0" y="401" width="414" height="495"/>
+                                                <rect key="frame" x="0.0" y="676.5" width="414" height="219.5"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Falcon Heavy" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I3F-ik-ARW">
                                                         <rect key="frame" x="30" y="30" width="102" height="21"/>
@@ -42,14 +41,14 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VRR-Km-Tx4">
-                                                        <rect key="frame" x="30" y="422" width="354" height="31"/>
+                                                        <rect key="frame" x="30" y="146.5" width="354" height="31"/>
                                                         <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="354" id="ece-Kh-56b"/>
                                                         </constraints>
                                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <state key="normal" title="Button"/>
-                                                        <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                                        <buttonConfiguration key="configuration" style="plain" title=" Посмотреть запуски"/>
                                                     </button>
                                                 </subviews>
                                                 <color key="backgroundColor" systemColor="systemMintColor"/>
@@ -62,7 +61,7 @@
                                                     <constraint firstItem="2FV-Gm-TWR" firstAttribute="top" secondItem="I3F-ik-ARW" secondAttribute="bottom" constant="40" id="cmm-rh-tck"/>
                                                     <constraint firstItem="VRR-Km-Tx4" firstAttribute="centerX" secondItem="NgI-rF-er6" secondAttribute="centerX" id="seq-Ll-Acv"/>
                                                     <constraint firstAttribute="bottom" secondItem="VRR-Km-Tx4" secondAttribute="bottom" constant="42" id="xbT-FL-p7b"/>
-                                                    <constraint firstItem="VRR-Km-Tx4" firstAttribute="top" secondItem="2FV-Gm-TWR" secondAttribute="bottom" constant="310.5" id="xyl-eM-Xi5"/>
+                                                    <constraint firstItem="VRR-Km-Tx4" firstAttribute="top" secondItem="2FV-Gm-TWR" secondAttribute="bottom" constant="35" id="xyl-eM-Xi5"/>
                                                 </constraints>
                                             </view>
                                         </subviews>
@@ -89,7 +88,6 @@
                                 </constraints>
                             </scrollView>
                         </subviews>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="6LG-X3-kbn" secondAttribute="bottom" id="4mH-gc-Bou"/>
@@ -105,7 +103,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="44.927536231884062" y="55.580357142857139"/>
+            <point key="canvasLocation" x="1002.8985507246377" y="50.892857142857139"/>
         </scene>
     </scenes>
     <resources>
