@@ -15,6 +15,7 @@ class RocketInfoViewController: UIViewController {
     @IBOutlet var scrollView: UIScrollView!
     @IBOutlet var subview: UIView!
     @IBOutlet var pageControl: UIPageControl!
+    @IBOutlet var activityIndicator: UIActivityIndicatorView!
     
     var rocketDescription = ""
     var rocketName = ""
@@ -34,6 +35,9 @@ class RocketInfoViewController: UIViewController {
         pageControl.allowsContinuousInteraction = false
         pageControl.preferredIndicatorImage = UIImage(named: "rocket")
         
+        activityIndicator.startAnimating()
+        activityIndicator.hidesWhenStopped = true
+        
         fetchImage()
         rocketNameLabel.text = rocketName
         rocketDescriptionLabel.text = rocketDescription
@@ -46,6 +50,7 @@ class RocketInfoViewController: UIViewController {
             switch result {
             case .success(let data):
                 self.rocketImage.image = UIImage(data: data)
+                self.activityIndicator.stopAnimating()
             case .failure(let error):
                 print(error.localizedDescription)
             }

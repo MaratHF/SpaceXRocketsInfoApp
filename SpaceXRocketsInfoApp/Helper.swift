@@ -20,4 +20,14 @@ class Helper {
         
         return formatter.string(from: date)
     }
+    
+    func translateCountry(_ name: String) -> String {
+        var country = ""
+        if name == "Republic of the Marshall Islands" {
+            country = "Маршалловы Острова"
+        } else {
+            country = "США"
+        }
+        return country
+    }
 }

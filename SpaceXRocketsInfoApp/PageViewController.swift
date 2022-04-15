@@ -44,33 +44,33 @@ class PageViewController: UIPageViewController {
         
         contentViewController.image = rockets[index].flickrImages.randomElement() ?? ""
         contentViewController.rocketName = rockets[index].name
-        contentViewController.rocketDescription = """
-Первый запуск                  \(Helper.shared.getDate(rockets[index].firstFlight))
-
-Страна                         \(rockets[index].country)
-
-Стоимость запуска              \(rockets[index].costPerLaunch)
-
-
-ПЕРВАЯ СТУПЕНЬ
-
-Количество двигателей          \(rockets[index].firstStage.engines)
-
-Количество топлива             \(rockets[index].firstStage.fuelAmountTons)
-
-Время сгорания                 \(rockets[index].firstStage.burnTimeSec ?? 0)
-
-
-ВТОРАЯ СТУПЕНЬ
-
-Количество двигателей          \(rockets[index].secondStage.engines)
-
-Количество топлива             \(rockets[index].secondStage.fuelAmountTons)
-
-Время сгорания                 \(rockets[index].secondStage.burnTimeSec ?? 0)
-"""
         contentViewController.currentPage = index
         contentViewController.numberOfPages = rockets.count
+        contentViewController.rocketDescription = """
+\(Helper.shared.getDate(rockets[index].firstFlight))
+
+\(Helper.shared.translateCountry(rockets[index].country))
+
+$\(Double(rockets[index].costPerLaunch) / 1000000) млн
+
+
+
+
+\(rockets[index].firstStage.engines)
+
+\(rockets[index].firstStage.fuelAmountTons) тонн
+
+\(rockets[index].firstStage.burnTimeSec ?? 0) сек
+
+
+
+
+\(rockets[index].secondStage.engines)
+
+\(rockets[index].secondStage.fuelAmountTons) тонн
+
+\(rockets[index].secondStage.burnTimeSec ?? 0) сек
+"""
         
         for launch in launches {
             if launch.rocket == rockets[index].id {
