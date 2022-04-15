@@ -51,6 +51,69 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0482B27D2809C18900C6CFED /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				0442FDC12808B501005140B5 /* Rocket.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		0482B27E2809C1B600C6CFED /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				0442FDBB2808B500005140B5 /* StartViewController.swift */,
+				0442FDBD2808B500005140B5 /* LaunchesViewController.swift */,
+				0442FDBE2808B500005140B5 /* PageViewController.swift */,
+				0442FDC22808B501005140B5 /* RocketInfoViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		0482B27F2809C1CC00C6CFED /* VIews */ = {
+			isa = PBXGroup;
+			children = (
+				0442FDBA2808B500005140B5 /* LaunchInfoCell.swift */,
+			);
+			path = VIews;
+			sourceTree = "<group>";
+		};
+		0482B2802809C1E100C6CFED /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				0442FDC02808B501005140B5 /* Helper.swift */,
+				0442FDBC2808B500005140B5 /* NetworkManager.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		0482B2812809C1F900C6CFED /* SupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
+				04C2574228032B1100154AC6 /* AppDelegate.swift */,
+				04C2574428032B1100154AC6 /* SceneDelegate.swift */,
+				04C2575028032B1300154AC6 /* Info.plist */,
+			);
+			path = SupportingFiles;
+			sourceTree = "<group>";
+		};
+		0482B2822809C21A00C6CFED /* Stroyboards */ = {
+			isa = PBXGroup;
+			children = (
+				0442FDBF2808B501005140B5 /* Main.storyboard */,
+				04C2574D28032B1300154AC6 /* LaunchScreen.storyboard */,
+			);
+			path = Stroyboards;
+			sourceTree = "<group>";
+		};
+		0482B2832809C22700C6CFED /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				04C2574B28032B1300154AC6 /* Assets.xcassets */,
+			);
+			path = Source;
+			sourceTree = "<group>";
+		};
 		04C2573628032B1100154AC6 = {
 			isa = PBXGroup;
 			children = (
@@ -70,20 +133,13 @@
 		04C2574128032B1100154AC6 /* SpaceXRocketsInfoApp */ = {
 			isa = PBXGroup;
 			children = (
-				04C2574228032B1100154AC6 /* AppDelegate.swift */,
-				04C2574428032B1100154AC6 /* SceneDelegate.swift */,
-				0442FDBB2808B500005140B5 /* StartViewController.swift */,
-				0442FDC02808B501005140B5 /* Helper.swift */,
-				0442FDBD2808B500005140B5 /* LaunchesViewController.swift */,
-				0442FDBA2808B500005140B5 /* LaunchInfoCell.swift */,
-				0442FDBF2808B501005140B5 /* Main.storyboard */,
-				0442FDBC2808B500005140B5 /* NetworkManager.swift */,
-				0442FDBE2808B500005140B5 /* PageViewController.swift */,
-				0442FDC12808B501005140B5 /* Rocket.swift */,
-				0442FDC22808B501005140B5 /* RocketInfoViewController.swift */,
-				04C2574D28032B1300154AC6 /* LaunchScreen.storyboard */,
-				04C2574B28032B1300154AC6 /* Assets.xcassets */,
-				04C2575028032B1300154AC6 /* Info.plist */,
+				0482B2812809C1F900C6CFED /* SupportingFiles */,
+				0482B27E2809C1B600C6CFED /* ViewControllers */,
+				0482B2802809C1E100C6CFED /* Services */,
+				0482B27F2809C1CC00C6CFED /* VIews */,
+				0482B2822809C21A00C6CFED /* Stroyboards */,
+				0482B27D2809C18900C6CFED /* Models */,
+				0482B2832809C22700C6CFED /* Source */,
 			);
 			path = SpaceXRocketsInfoApp;
 			sourceTree = "<group>";
@@ -310,7 +366,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = SpaceXRocketsInfoApp/Info.plist;
+				INFOPLIST_FILE = SpaceXRocketsInfoApp/SupportingFiles/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -337,7 +393,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = SpaceXRocketsInfoApp/Info.plist;
+				INFOPLIST_FILE = SpaceXRocketsInfoApp/SupportingFiles/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
