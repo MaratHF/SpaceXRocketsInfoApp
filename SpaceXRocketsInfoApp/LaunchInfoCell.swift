@@ -17,7 +17,6 @@ class LaunchInfoCell: UICollectionViewCell {
 \(launch.name)
 \(Helper.shared.getDate(launch.dateUtc))
 """
-        
         if launch.success == true {
             statusLaunchImage.image = UIImage(named: "success")
         } else {

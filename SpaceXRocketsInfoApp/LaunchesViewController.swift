@@ -19,23 +19,32 @@ class LaunchesViewController: UICollectionViewController {
         navigationItem.title = rocketName
     }
     
-    // MARK: UICollectionViewDataSource
+    @IBAction func backButtonPressed(_ sender: UIBarButtonItem) {
+        dismiss(animated: false)
+    }
+}
+
+// MARK: - UICollectionViewDataSource
+extension LaunchesViewController {
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        launches.count
+        if !launches.isEmpty {
+            return launches.count
+        } else {
+            return 1
+        }
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! LaunchInfoCell
         
-        cell.configure(with: launches[indexPath.item])
-    
+        if !launches.isEmpty {
+            cell.configure(with: launches[indexPath.item])
+        } else {
+            cell.nameOfLaunchLabel.text = "Данные о запусках отсутствуют"
+            cell.statusLaunchImage.image = UIImage(named: "emoji")
+        }
         return cell
     }
-
-    @IBAction func backButtonPressed(_ sender: UIBarButtonItem) {
-        dismiss(animated: false)
-    }
-    
 }
 
 // MARK: - UICollectionViewDelegateFlowLayout

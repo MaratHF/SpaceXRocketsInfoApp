@@ -19,7 +19,10 @@ class PageViewController: UIPageViewController {
         
         fetchRockets()
     }
-    
+}
+
+// MARK: - Private methods
+extension PageViewController {
     private func fetchRockets() {
         NetworkManager.shared.fetch(dataType: [Rocket].self, from: Link.rocketsURL.rawValue) { result in
             switch result {
@@ -35,8 +38,7 @@ class PageViewController: UIPageViewController {
         }
     }
     
-    func showViewControllerAtIndex(_ index: Int) -> RocketInfoViewController? {
-        
+    private func showViewControllerAtIndex(_ index: Int) -> RocketInfoViewController? {
         guard index >= 0 else { return nil }
         guard index < rockets.count else { return nil }
         guard let contentViewController = storyboard?.instantiateViewController(
@@ -71,17 +73,16 @@ $\(Double(rockets[index].costPerLaunch) / 1000000) млн
 
 \(rockets[index].secondStage.burnTimeSec ?? 0) сек
 """
-        
         for launch in launches {
             if launch.rocket == rockets[index].id {
                 contentViewController.launches.append(launch)
             }
         }
-        
         return contentViewController
     }
 }
 
+// MARK: - UIPageViewControllerDataSource
 extension PageViewController: UIPageViewControllerDataSource {
     
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {

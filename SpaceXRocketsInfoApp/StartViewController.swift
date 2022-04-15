@@ -7,9 +7,9 @@
 
 import UIKit
 
-class FirstViewController: UIViewController {
+class StartViewController: UIViewController {
 
-    var launches: [Launch] = []
+    private var launches: [Launch] = []
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
@@ -18,7 +18,7 @@ class FirstViewController: UIViewController {
        
     }
     
-    func fetchLaunches() {
+    private func fetchLaunches() {
         NetworkManager.shared.fetch(dataType: [Launch].self, from: Link.launchesURL.rawValue) { result in
             switch result {
             case .success(let launches):
@@ -30,13 +30,12 @@ class FirstViewController: UIViewController {
         }
     }
     
-    func startRocketsInfo() {
-        
-        if let pageViewController = storyboard?.instantiateViewController(withIdentifier: "PageViewController") as? PageViewController {
+    private func startRocketsInfo() {
+        if let pageViewController = storyboard?.instantiateViewController(
+            withIdentifier: "PageViewController") as? PageViewController {
             pageViewController.launches = launches
             
             present(pageViewController, animated: false)
         }
     }
-
 }

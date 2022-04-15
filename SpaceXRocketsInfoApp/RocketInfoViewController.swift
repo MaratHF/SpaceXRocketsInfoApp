@@ -39,6 +39,7 @@ class RocketInfoViewController: UIViewController {
         activityIndicator.hidesWhenStopped = true
         
         fetchImage()
+        
         rocketNameLabel.text = rocketName
         rocketDescriptionLabel.text = rocketDescription
         pageControl.numberOfPages = numberOfPages

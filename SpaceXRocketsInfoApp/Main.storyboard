@@ -9,15 +9,28 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--First View Controller-->
+        <!--Start View Controller-->
         <scene sceneID="FEj-Ja-cCB">
             <objects>
-                <viewController id="aBf-kY-dxa" customClass="FirstViewController" customModule="SpaceXRocketsInfoApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="aBf-kY-dxa" customClass="StartViewController" customModule="SpaceXRocketsInfoApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="CGT-ur-Vqn">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="gFy-Nn-GOe">
+                                <rect key="frame" x="87" y="389" width="240" height="128"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="240" id="HeN-q0-iAy"/>
+                                    <constraint firstAttribute="height" constant="128" id="XaO-Vm-xPI"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="yTy-YX-jwx"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="gFy-Nn-GOe" firstAttribute="centerX" secondItem="yTy-YX-jwx" secondAttribute="centerX" id="Psa-9A-GtW"/>
+                            <constraint firstItem="gFy-Nn-GOe" firstAttribute="centerY" secondItem="yTy-YX-jwx" secondAttribute="centerY" id="zbv-36-HAG"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Jra-9L-Mds" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -156,7 +169,7 @@
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VRR-Km-Tx4">
-                                                        <rect key="frame" x="20" y="685" width="374" height="60"/>
+                                                        <rect key="frame" x="20" y="684.5" width="374" height="60"/>
                                                         <color key="backgroundColor" red="0.27479669574609733" green="0.27479669574609733" blue="0.27479669574609733" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="60" id="9Fb-Uh-5WW"/>
@@ -297,9 +310,7 @@
         </scene>
     </scenes>
     <resources>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
+        <image name="logo" width="750" height="473"/>
         <systemColor name="systemGrayColor">
             <color red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
