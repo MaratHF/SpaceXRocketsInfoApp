@@ -41,14 +41,14 @@ extension PageViewController {
     private func showViewControllerAtIndex(_ index: Int) -> RocketInfoViewController? {
         guard index >= 0 else { return nil }
         guard index < rockets.count else { return nil }
-        guard let contentViewController = storyboard?.instantiateViewController(
+        guard let rocketInfoVC = storyboard?.instantiateViewController(
             withIdentifier: "ContentViewController") as? RocketInfoViewController else { return nil }
         
-        contentViewController.image = rockets[index].flickrImages.randomElement() ?? ""
-        contentViewController.rocketName = rockets[index].name
-        contentViewController.currentPage = index
-        contentViewController.numberOfPages = rockets.count
-        contentViewController.rocketDescription = """
+        rocketInfoVC.image = rockets[index].flickrImages.randomElement() ?? ""
+        rocketInfoVC.rocketName = rockets[index].name
+        rocketInfoVC.currentPage = index
+        rocketInfoVC.numberOfPages = rockets.count
+        rocketInfoVC.rocketDescription = """
 \(Helper.shared.getDate(rockets[index].firstFlight))
 
 \(Helper.shared.translateCountry(rockets[index].country))
@@ -73,12 +73,22 @@ $\(Double(rockets[index].costPerLaunch) / 1000000) млн
 
 \(rockets[index].secondStage.burnTimeSec ?? 0) сек
 """
+        
+        let characteristics = [
+            String(rockets[index].height.meters),
+            String(rockets[index].diameter.meters),
+            String(rockets[index].mass.kg),
+            String(rockets[index].payloadWeights.first?.kg ?? 0)
+        ]
+        
+        rocketInfoVC.characteristicsValue = characteristics
+        
         for launch in launches {
             if launch.rocket == rockets[index].id {
-                contentViewController.launches.append(launch)
+                rocketInfoVC.launches.append(launch)
             }
         }
-        return contentViewController
+        return rocketInfoVC
     }
 }
 

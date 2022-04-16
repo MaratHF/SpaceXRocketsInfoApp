@@ -16,6 +16,10 @@ struct Rocket: Decodable {
     let firstStage: Stage
     let secondStage: Stage
     let flickrImages: [String]
+    let height: Height
+    let diameter: Height
+    let mass: Mass
+    let payloadWeights: [Mass]
 }
 
 struct Stage: Decodable {
@@ -29,4 +33,14 @@ struct Launch: Decodable {
     let rocket: String
     let dateUtc: Date
     let success: Bool?
+}
+
+struct Height: Decodable {
+    let meters: Double
+    let feet: Double
+}
+
+struct Mass: Decodable {
+    let kg: Int
+    let lb: Int
 }

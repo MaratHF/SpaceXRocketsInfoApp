@@ -9,6 +9,8 @@ import UIKit
 
 class RocketInfoViewController: UIViewController {
 
+    @IBOutlet var collectionView: UICollectionView!
+    @IBOutlet var characteristicLabel: CharacteristicsRocketViewCell!
     @IBOutlet var rocketImage: UIImageView!
     @IBOutlet var rocketDescriptionLabel: UILabel!
     @IBOutlet var rocketNameLabel: UILabel!
@@ -23,6 +25,7 @@ class RocketInfoViewController: UIViewController {
     var currentPage = 0
     var image = ""
     var launches: [Launch] = []
+    var characteristicsValue: [String] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -68,3 +71,27 @@ class RocketInfoViewController: UIViewController {
     }
 }
 
+// MARK: - UICollectionViewDataSource
+extension RocketInfoViewController: UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        characteristicsValue.count
+    }
+
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "rocketCell", for: indexPath) as! CharacteristicsRocketViewCell
+        
+        let namesOfCharacteristics = ["Высота, м", "Диаметр, м", "Масса, кг", "Нагрузка, кг"]
+        
+        cell.characteristicValue.text = characteristicsValue[indexPath.item]
+        cell.characteristicName.text = namesOfCharacteristics[indexPath.item]
+        
+        return cell
+    }
+}
+
+// MARK: - UICollectionViewDelegateFlowLayout
+extension RocketInfoViewController: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        CGSize(width: 128, height: 128)
+    }
+}
