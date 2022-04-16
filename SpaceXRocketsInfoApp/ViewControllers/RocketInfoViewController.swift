@@ -35,9 +35,6 @@ class RocketInfoViewController: UIViewController {
         subview.layer.cornerRadius = 35
         subview.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
         
-        pageControl.allowsContinuousInteraction = false
-        pageControl.preferredIndicatorImage = UIImage(named: "rocket")
-        
         activityIndicator.startAnimating()
         activityIndicator.hidesWhenStopped = true
         
