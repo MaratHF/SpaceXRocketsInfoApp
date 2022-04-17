@@ -73,12 +73,16 @@ $\(Double(rockets[index].costPerLaunch) / 1000000) млн
 
 \(rockets[index].secondStage.burnTimeSec ?? 0) сек
 """
-        
+            
+        let formatter = NumberFormatter()
+        formatter.numberStyle = .decimal
+        formatter.groupingSeparator = ","
+
         let characteristics = [
-            String(rockets[index].height.meters),
-            String(rockets[index].diameter.meters),
-            String(rockets[index].mass.kg),
-            String(rockets[index].payloadWeights.first?.kg ?? 0)
+            formatter.string(for: rockets[index].height.meters),
+            formatter.string(for: rockets[index].diameter.meters),
+            formatter.string(for: rockets[index].mass.kg),
+            formatter.string(for: (rockets[index].payloadWeights.first?.kg ?? 0))
         ]
         
         rocketInfoVC.characteristicsValue = characteristics

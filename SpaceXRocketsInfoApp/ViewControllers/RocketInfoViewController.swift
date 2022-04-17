@@ -25,7 +25,7 @@ class RocketInfoViewController: UIViewController {
     var currentPage = 0
     var image = ""
     var launches: [Launch] = []
-    var characteristicsValue: [String] = []
+    var characteristicsValue: [String?] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
